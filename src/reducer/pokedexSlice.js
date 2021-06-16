@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const getPokemon = createAsyncThunk(
   "pokedex/searchPokemon",
@@ -14,7 +14,13 @@ const pokedexSlice = createSlice({
   initialState: {
     isLoading: false,
     error: null,
-    pokemon: {},
+    pokemon: {
+      id: null,
+      weight: "N.A",
+      height: "N.A",
+      types: [],
+      sprites: [],
+    },
   },
   reducers: {},
   extraReducers: {
